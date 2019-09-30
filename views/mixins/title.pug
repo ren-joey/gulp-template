@@ -1,0 +1,10 @@
+mixin title(title='標題區域', date='7/17/2019', ver='1.0.0')
+    .main-title
+        h1 #{title}
+        .status
+            .status__date 發布日期#{date}
+            .status__ver 發布版本#{ver}
+
+mixin title-no-date(title='標題區域', date='7/17/2019', ver='1.0.0')
+    .main-title
+        h1 #{title}

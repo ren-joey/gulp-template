@@ -1,0 +1,10 @@
+mixin list(title, subtitle, date)
+    .list
+        .list__heading
+            .title= title
+            if subtitle
+                .subtitle= subtitle
+        if date
+            .list__state= date
+        .list__arrow >
+        a.click-area(href="#")

@@ -1,0 +1,137 @@
+@mixin d-flex {
+    display: flex;
+}
+
+@mixin d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@mixin border {
+    border: 1px solid $gray-3;
+}
+
+@mixin border-blue {
+    border: 1px solid $blue-1;
+}
+
+@mixin border-right {
+    border-right: 1px solid $gray-3;
+}
+
+@mixin border-bottom {
+    border-bottom: 1px solid $gray-3;
+}
+
+@mixin box-shadow-1 {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin border-bottom-dotted {
+    border: 1px dotted $gray-3;
+}
+
+@mixin hover-style-1 {
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 0;
+        background-color: $blue-2;
+        transition: $transition;
+        content: '';
+    }
+
+    &:hover {
+        background-color: $gray-2;
+
+        &::after {
+            width: $padding-0;
+        }
+    }
+}
+
+@mixin hover-style-2 {
+    position: relative;
+    transform: scale(0.9);
+    transition: 0.1s;
+
+    &::after {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border: 1px solid $blue-1;
+        opacity: 1;
+        content: '';
+    }
+
+    &:hover {
+        transform: scale(1);
+
+        &::after {
+            opacity: 0;
+        }
+    }
+}
+
+@mixin hover-style-3 {
+    position: relative;
+    transform: scale(1);
+    transition: 0.1s;
+
+    &::after {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        border: 1px solid $blue-1;
+        opacity: 0;
+        content: '';
+    }
+
+    &:hover {
+        transform: scale(0.95);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin hover-style-4 {
+    color: $gray-5;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 0;
+        background-color: $blue-2;
+        transition: $transition;
+        content: '';
+    }
+
+    &:hover {
+        color: $white;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin responsive-width {
+    @media (min-width: 1024.98px) {
+        width: 90%;
+    }
+}
+

@@ -1,0 +1,10 @@
+mixin article-title(title, subtitle, more = false)
+    .article-title
+        h2= title
+        if subtitle
+            .subtitle= subtitle
+        .line
+        if more
+            .more-btn
+                | MORE
+                a.click-area

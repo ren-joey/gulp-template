@@ -1,0 +1,59 @@
+mixin input-default(id, name, label, placeholder='', tip, required)
+    .input
+        if label
+            label(for= id)= label
+        if required
+            input(id= id, name= name, type='text', placeholder= placeholder, required='required')
+        else
+            input(id= id, name= name, type='text', placeholder= placeholder)
+    if tip
+        .input__tip= tip
+
+mixin input-password(id, name, label, placeholder='', tip, required)
+    .input
+        if label
+            label(for= id)= label
+        if required
+            input(id= id, name= name, type='password', placeholder= placeholder, required='required')
+        else
+            input(id= id, name= name, type='password', placeholder= placeholder)
+    if tip
+        .input__tip= tip
+
+mixin input-verify(id, name, label, placeholder='', tip, required)
+    .input
+        if label
+            label(for= id)= label
+        if required
+            input.sm(id= id, name= name, type='password', placeholder= placeholder, required='required')
+        else
+            input.sm(id= id, name= name, type='password', placeholder= placeholder)
+
+        img.ml-4(src="./assets/images/verify.jpg", width="auto", height="30", alt="驗證圖片", srcset="")
+    if tip
+        .input__tip= tip
+
+mixin input-file(id, name, placeholder='選擇檔案')
+    .input
+        .custom-file
+            input.custom-file-input(id= id, name= name, type='file')
+            label.custom-file-label(for= id)= placeholder
+
+mixin input-bootstrap(id, name, title="標題", placeholder="請輸入內容")
+    .input
+        .input-group
+            .input-group-prepend
+                .input-group-text= title
+            input.form-control(id= id, name= name, type='text', placeholder= placeholder)
+
+mixin input-warn(msg)
+    .input
+        .input__warn
+            span= msg
+
+mixin input-warn-icon(msg)
+    .input
+        .input__warn
+            i.fas.fa-exclamation-triangle
+            | &nbsp;
+            span= msg
